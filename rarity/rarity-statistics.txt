@@ -2,7 +2,7 @@
 Trait Frequencies (sorted by rarest to least rare):
 ---------------------------------------------------
 honorary - yes = 0.07% (7/10000)
-furr - none = 0.07% (7/10000)
+fur - none = 0.07% (7/10000)
 mouth - none = 0.07% (7/10000)
 fur - gold = 0.09% (9/10000)
 animated background - jazz = 0.35% (35/10000)
