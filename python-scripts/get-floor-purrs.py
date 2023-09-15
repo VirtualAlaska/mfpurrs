@@ -62,6 +62,38 @@ def get_etch_listings() -> list[Listing]:
 
     return typed_listings
 
+def get_ethscriptions_listings() -> list[Listing]:
+    listings = []
+    typed_listings = []
+    page = 1
+    res = requests.get('https://api.ethscriptions.com/api/ethscriptions/filtered?collection=mfpurrs&with_listings=true&sort_by=collection_item_index&sort_order=asc&limit=100&no_cache=true&page=1')
+    response_count = res.json()['response_count']
+    total_count = res.json()['total_count']
+    listings += res.json()['ethscriptions']
+    if (response_count <= total_count):
+        page += 1
+        while (True):
+            res = requests.get(f'https://api.ethscriptions.com/api/ethscriptions/filtered?collection=mfpurrs&with_listings=true&sort_by=collection_item_index&sort_order=asc&limit=100&no_cache=true&page={page}')
+            response_count = res.json()['response_count']
+            if (response_count == 0):
+                break
+            listings += res.json()['ethscriptions']
+            page += 1
+    
+    for l in listings:
+        attrs = get_collection_item_by_id(METADATA, l['transaction_hash'])
+        typed_listings.append(Listing(
+            l['transaction_hash'],
+            l['collection_items'][0]['name'],
+            l['content_uri'],
+            int(l['valid_listings'][0]['price']) / (10 ** 18),
+            'unkown',
+            'ethscriptions',
+            attrs
+        ))
+
+    return typed_listings
+
 def get_ordex_listings() -> list[Listing]:
     listings = []
     typed_listings = []
@@ -125,11 +157,17 @@ def get_ordex_listings() -> list[Listing]:
             ))
     return typed_listings
 
+print('Fetching newest listings...')
+
 ordex_listings = get_ordex_listings()
 etch_listings = get_etch_listings()
+ethscriptions_listings = get_ethscriptions_listings()
+
+print('Listings Fetched!\n')
 
 total_listings = ordex_listings + etch_listings
 
+print(f'Total Ethscriptions.com Listings: {len(ethscriptions_listings)}')
 print(f'Total Etch.Market Listings: {len(etch_listings)}')
 print(f'Total Ordex Listings: {len(ordex_listings)}')
 
