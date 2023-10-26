@@ -1,0 +1,301 @@
+{
+    "name": "mfpurr-neko",
+    "description": "may the mfpurr-neko bring you good fortune",
+    "total_supply": 16,
+    "logo_image_uri": "esc://ethscriptions/0x65acd189c9891c90c5469fa49e60a871056c6c59a168a02ae23f4dad27a90dbb/data",
+    "banner_image_uri": "esc://ethscriptions/0x9dd1e7dd604c325aa26ba12d13dc1c7767bcac481058d93f6c8834ca74d7b5b2/data",
+    "background_color": "",
+    "twitter_link": "",
+    "website_link": "https://mfpurrs.com",
+    "discord_link": "",
+    "collection_items": [
+        {
+            "ethscription_id": "0xfdb428119c4b42caf54e3256fa37f575b1a55e9c38743fb01fd71ee8fd8fe0c5",
+            "name": "mfpurr-neko #1",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 0,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "gold"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x141674ed477b80701d975644f86d855abe58048117373f19cfbff4e420d7b7a5",
+            "name": "mfpurr-neko #2",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 1,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "gold"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0xf8c0278d678ae1215d273ce47e2660b7d71d3ea6870e34d74ac635ce9cffc005",
+            "name": "mfpurr-neko #3",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 2,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "white"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0xa717768a4ee65a8d1a2a9a9abe6d6c548b622f746789dcc3452f247e827f9f76",
+            "name": "mfpurr-neko #4",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 3,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "white"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x737659aa9183a65d7798e791f2cec463de4d1ce2c00dbb8e4f76fac185d401ad",
+            "name": "mfpurr-neko #5",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 4,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "black"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0xf4625ad43986edf66ed963304c872b8ee8e34466967570068f03990d3e2dbbdf",
+            "name": "mfpurr-neko #6",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 5,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "black"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x3c029d458dffe1ef3c04b8e0a6660b59daff65751d9d24da5f7cc7805ed9d95c",
+            "name": "mfpurr-neko #7",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 6,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "warm white"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x8509ea2ef5fa8db3a4e006d0eb87e498b53e1d5532b3f380dda887ff3b5fb1a2",
+            "name": "mfpurr-neko #8",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 7,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "warm white"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x904f30393a616098f1d2dfec378cf77b9fcac6d68051c891a429824b942d2d9d",
+            "name": "mfpurr-neko #9",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 8,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "orange"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x4c84a5cd557308a7cc73cc4d580974ca705515f1d0db99bfbc88522c050e0421",
+            "name": "mfpurr-neko #10",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 9,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "orange"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x851d1a1c0f0eddd75ec601bdfca987272e270af0a06f8529cb33464e4c8243fb",
+            "name": "mfpurr-neko #11",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 10,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "blue"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x44a056e3f4e15685e409017725ee69b304fe833b9381dfecbe271e8615502463",
+            "name": "mfpurr-neko #12",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 11,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "blue"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0xd87f8f5e01ee36aba9f13a6a94643eb28004ae62d7d22d972284f33dd73eff3f",
+            "name": "mfpurr-neko #13",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 12,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "cheshire"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x45e0f6c1180b7193bcd960e66b5c0a950594e6f4736714917a2b78c7f68d00b3",
+            "name": "mfpurr-neko #14",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 13,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "cheshire"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x2b9bbf669a2153720dd679461c4b26ba288e90f2d4893e77a9db8622edf50a8a",
+            "name": "mfpurr-neko #15",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 14,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "siamese"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "neko"
+                }
+            ]
+        },
+        {
+            "ethscription_id": "0x0c991ec4be2376e3ab6cc107f3ac82caef0cc06fbf7a0f05f7f83835c4523009",
+            "name": "mfpurr-neko #16",
+            "description": "",
+            "external_url": "",
+            "background_color": "",
+            "item_index": 15,
+            "item_attributes": [
+                {
+                    "trait_type": "fur",
+                    "value": "siamese"
+                },
+                {
+                    "trait_type": "eyes",
+                    "value": "classic"
+                }
+            ]
+        }
+    ]
+}
