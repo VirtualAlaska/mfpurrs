@@ -98,13 +98,6 @@ honorary - none = 99.93% (9993/10000)
 Rarity Scores for Traits (sorted by rarest to least rare):
 ----------------------------------------------------------
 honorary - yes = 1428.571429 | calculation = (1 / (7/10000))
-honorary - virtual alaska = 10000.000000 | calculation = (1 / (1/10000))
-honorary - ariana = 10000.000000 | calculation = (1 / (1/10000))
-honorary - macs = 10000.000000 | calculation = (1 / (1/10000))
-honorary - middlemarch = 10000.000000 | calculation = (1 / (1/10000))
-honorary - hirsch = 10000.000000 | calculation = (1 / (1/10000))
-honorary - chris torres = 10000.000000 | calculation = (1 / (1/10000))
-honorary - sartoshi = 10000.000000 | calculation = (1 / (1/10000))
 fur - none = 1428.571429 | calculation = (1 / (7/10000))
 mouth - none = 1428.571429 | calculation = (1 / (7/10000))
 fur - gold = 1111.111111 | calculation = (1 / (9/10000))
