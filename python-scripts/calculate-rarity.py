@@ -1,96 +1,138 @@
+import os
+import re
 import json
 from collections import defaultdict
 
-# Step 1: Read the JSON File
-with open(r"<ENTER FILE PATH HERE FOR MFPURRS METADATA>", 'r') as json_file:
-    nft_data = json.load(json_file)
-    total_retrieved = len(nft_data['collection_items'])
+# Setup paths
+base_dir = os.path.dirname(os.path.realpath(__file__))
+input_meta = os.path.normpath(os.path.join(base_dir, '..', 'metadata', 'metadata-mfpurrs.json'))
+metadata_dir = os.path.dirname(input_meta)
+rarity_dir = os.path.normpath(os.path.join(base_dir, '..', 'rarity'))
 
-# Step 2: Print Status
-if total_retrieved == 10000:
-    print("Retrieved 10,000 mfpurrs.\nCalculating rarity...")
-else:
-    print(f"Retrieved the wrong number of mfpurrs. Expected 10,000 but retrieved {total_retrieved}.")
+# Ensure directories exist
+os.makedirs(metadata_dir, exist_ok=True)
+os.makedirs(rarity_dir, exist_ok=True)
 
-# Step 3: Calculate Trait Value Frequencies
-trait_value_counts = defaultdict(int)
-total_items = len(nft_data['collection_items'])
+# Determine next version (newX) by scanning existing outputs
+def next_version(dir_path, pattern):
+    versions = []
+    for fname in os.listdir(dir_path):
+        m = re.match(pattern, fname)
+        if m:
+            versions.append(int(m.group(1)))
+    return max(versions) + 1 if versions else 1
 
-for item in nft_data['collection_items']:
-    for attr in item['item_attributes']:
-        trait_type, trait_value = attr['trait_type'], attr['value']
-        trait_value_counts[(trait_type, trait_value)] += 1
+# Version for JSON: metadata-mfpurrs-newX.json
+json_pattern = r'metadata-mfpurrs-new(\d+)\\.json$'
+new_json_ver = next_version(metadata_dir, json_pattern)
+output_meta = os.path.join(metadata_dir, f'metadata-mfpurrs-new{new_json_ver}.json')
 
-# Step 4: Calculate Trait Frequencies
-for (trait_type, trait_value), count in sorted(trait_value_counts.items(), key=lambda x: x[1]):
-    frequency_percentage = (count / total_items) * 100
+# Version for TXT reports only if static exist
+rank_static = os.path.join(rarity_dir, 'rarity-rankings.txt')
+stats_static = os.path.join(rarity_dir, 'rarity-statistics.txt')
 
-# Step 5: Calculate Rarity Scores and Rankings
-nft_rankings = []
+rank_pattern = r'rarity-rankings-new(\d+)\\.txt$'
+stats_pattern = r'rarity-statistics-new(\d+)\\.txt$'
+new_rank_ver = next_version(rarity_dir, rank_pattern) if os.path.exists(rank_static) else None
+new_stats_ver = next_version(rarity_dir, stats_pattern) if os.path.exists(stats_static) else None
 
-for nft in nft_data['collection_items']:
-    nft_traits = nft['item_attributes']
-    rarity_scores = []
+output_rank = (os.path.join(rarity_dir, f'rarity-rankings-new{new_rank_ver}.txt')
+               if new_rank_ver else rank_static)
+output_stats = (os.path.join(rarity_dir, f'rarity-statistics-new{new_stats_ver}.txt')
+                if new_stats_ver else stats_static)
 
-    for trait in nft_traits:
-        trait_type, trait_value = trait['trait_type'], trait['value']
-        
-        # Skip the 'rarity' trait_type
-        if trait_type == 'rarity':
-            continue
-        
-        count = trait_value_counts[(trait_type, trait_value)]
-        rarity_score = 1 / (count / total_items)
-        rarity_scores.append((trait_type, trait_value, rarity_score))
+# Load metadata
+with open(input_meta, 'r') as f:
+    data = json.load(f)
+items = data.get('collection_items', [])
+total_items = len(items)
+print(f"Retrieved {total_items} items. Version: new{new_json_ver}\nCalculating rarity...")
 
-    if rarity_scores:
-        rarity_scores.sort(key=lambda x: x[2], reverse=True)
-        nft_rankings.append((nft['name'], rarity_scores[0]))
+# Count trait frequencies
+trait_counts = defaultdict(int)
+for item in items:
+    for attr in item.get('item_attributes', []):
+        if attr.get('trait_type') == 'rarity': continue
+        key = (attr['trait_type'], attr['value'])
+        trait_counts[key] += 1
 
-# Step 6: Order Rarity Rankings by Rarest to Least Rare
-nft_rankings.sort(key=lambda x: x[1][2], reverse=True)
+# Prepare ranking data
+temp = []
+honorary = {"mfpurr #9606","mfpurr #9607","mfpurr #9622",
+             "mfpurr #9767","mfpurr #9838","mfpurr #9896","mfpurr #9992"}
+for item in items:
+    name = item.get('name')
+    es_id = item.get('ethscription_id')
+    sum_score = 0.0
+    best_score = 0.0
+    best_trait = None
+    for attr in item.get('item_attributes', []):
+        if attr.get('trait_type') == 'rarity': continue
+        freq = trait_counts[(attr['trait_type'], attr['value'])]
+        score = total_items / freq
+        sum_score += score
+        if score > best_score:
+            best_score = score
+            best_trait = (attr['trait_type'], attr['value'])
+    temp.append({'id': es_id, 'name': name, 'sum': sum_score, 'best': best_trait})
+# Sort by summed rarity descending
+temp.sort(key=lambda x: x['sum'], reverse=True)
 
-# Step 7: Save Rarity Rankings to a File
-txt_filename = r"<ENTER FILE PATH HERE FOR TEXT FILE LOCATION>"
+# Assign ranks
+ranks = {}
+curr = 2
+for entry in temp:
+    nm = entry['name']
+    eid = entry['id']
+    if nm in honorary:
+        ranks[eid] = 1
+    else:
+        ranks[eid] = curr
+        curr += 1
 
-honorary_mfpurrs = [
-    "mfpurr #9606",
-    "mfpurr #9607",
-    "mfpurr #9622",
-    "mfpurr #9767",
-    "mfpurr #9838",
-    "mfpurr #9896",
-    "mfpurr #9992"
-]
+# Update JSON rarity values
+for item in items:
+    eid = item.get('ethscription_id')
+    rank_val = ranks.get(eid)
+    if rank_val is None: continue
+    updated = False
+    for attr in item.get('item_attributes', []):
+        if attr.get('trait_type') == 'rarity':
+            attr['value'] = rank_val
+            updated = True
+            break
+    if not updated:
+        item.setdefault('item_attributes', []).append({'trait_type':'rarity','value':rank_val})
 
-with open(txt_filename, 'w') as txt_file:
-    for rank, (nft_name, (trait_type, trait_value, _)) in enumerate(nft_rankings, start=1):
-        # Check if the current nft is in the honorary_mfpurrs list
-        if nft_name in honorary_mfpurrs:
-            rank = 1  # Set rank as 1 for honorary mfpurrs, as they are all the rarest in the collection
-        
-        ethscription_id = next(
-            (item['ethscription_id'] for item in nft_data['collection_items'] if item['name'] == nft_name),
-            ''
-        )
-        link = f"https://ethscriptions.com/ethscriptions/{ethscription_id}"
-        text = f"Rank {rank} - {nft_name} | Rarest trait = {trait_type} - {trait_value} | Link: {link}\n"
-        txt_file.write(text)
+# Write updated metadata JSON
+with open(output_meta, 'w') as f:
+    json.dump(data, f, indent=4)
+print(f"Wrote updated metadata to {output_meta}")
 
+# Write rarity-rankings.txt
+with open(output_rank, 'w') as f:
+    nr = 2
+    for entry in temp:
+        nm = entry['name']
+        bt = entry['best']
+        eid = entry['id']
+        if not bt: continue
+        if nm in honorary:
+            rnk = 1
+        else:
+            rnk = nr
+            nr += 1
+        tr = f"{bt[0]} - {bt[1]}"
+        link = f"https://marketplace.mfpurrs.com/details/{eid}"
+        f.write(f"Rank {rnk} - {nm} | Rarest trait = {tr} | Link: {link}\n")
+print(f"Wrote rankings to {output_rank}")
 
-# Step 8: Calculate and Print Rarity Scores for Traits
-print("\n-------------------------------------------------------------\nRarity Scores for Traits (sorted by most rare to least rare):\n-------------------------------------------------------------")
-for trait, count in sorted(trait_value_counts.items(), key=lambda x: (x[1] / total_items)):
-    trait_type, trait_value = trait
-    
-    # Skip the 'rarity' trait_type
-    if trait_type == 'rarity':
-        continue
-    
-    rarity_score = 1 / (count / total_items)
-    frequency = count
-    
-    print(f"{trait_type} - {trait_value} | rarity score = {rarity_score:.2f} | frequency = {frequency} / 10,000")
-    
-print("\nThe terminal output of this script is tracked as a text file here: https://github.com/VirtualAlaska/mfpurrs/blob/main/rarity/rarity-statistics.txt")
-print("\nThe full rankings text file that this script produces is tracked here: https://github.com/VirtualAlaska/mfpurrs/blob/main/rarity/rarity-rankings.txt")
+# Write rarity-statistics.txt
+with open(output_stats, 'w') as f:
+    f.write("-------------------------------------------------------------\n")
+    f.write("Rarity Scores for Traits (sorted by most rare to least rare):\n")
+    f.write("-------------------------------------------------------------\n")
+    for (tt, tv), cnt in sorted(trait_counts.items(), key=lambda x: (total_items/x[1]), reverse=True):
+        sc = total_items / cnt
+        f.write(f"{tt} - {tv} | rarity score = {sc:.2f} | frequency = {cnt} / {total_items}\n")
+print(f"Wrote statistics to {output_stats}")
