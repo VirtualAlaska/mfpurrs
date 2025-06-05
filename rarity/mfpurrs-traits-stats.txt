@@ -1,0 +1,90 @@
+-------------------------------------------------------------
+Rarity Scores for Traits (special at top, then others):
+-------------------------------------------------------------
+honorary - virtual alaska | rarity score = 10000.00 | frequency = 1 / 10000
+honorary - ariana | rarity score = 10000.00 | frequency = 1 / 10000
+honorary - macs | rarity score = 10000.00 | frequency = 1 / 10000
+honorary - middlemarch | rarity score = 10000.00 | frequency = 1 / 10000
+honorary - hirsch | rarity score = 10000.00 | frequency = 1 / 10000
+honorary - chris torres | rarity score = 10000.00 | frequency = 1 / 10000
+honorary - sartoshi | rarity score = 10000.00 | frequency = 1 / 10000
+fur - gold | rarity score = 1111.11 | frequency = 9 / 10000
+animated background - jazz | rarity score = 250.00 | frequency = 40 / 10000
+animated background - purple waves | rarity score = 250.00 | frequency = 40 / 10000
+animated background - mushroom paradise | rarity score = 250.00 | frequency = 40 / 10000
+animated background - rainbow mayhem | rarity score = 250.00 | frequency = 40 / 10000
+fur - white | rarity score = 104.17 | frequency = 96 / 10000
+fur - black | rarity score = 104.17 | frequency = 96 / 10000
+hat - golden headphones | rarity score = 98.04 | frequency = 102 / 10000
+clothing - gold chain | rarity score = 78.74 | frequency = 127 / 10000
+hat - black headphones | rarity score = 76.92 | frequency = 130 / 10000
+clothing - silver chain | rarity score = 71.43 | frequency = 140 / 10000
+eyewear - vr headset | rarity score = 70.42 | frequency = 142 / 10000
+eye color - bloodshot | rarity score = 48.54 | frequency = 206 / 10000
+background - space | rarity score = 46.30 | frequency = 216 / 10000
+eyewear - nyan noggles | rarity score = 43.29 | frequency = 231 / 10000
+mouth - nyan cat | rarity score = 43.29 | frequency = 231 / 10000
+background - windows | rarity score = 38.31 | frequency = 261 / 10000
+eyewear - bitcoin maxi | rarity score = 37.45 | frequency = 267 / 10000
+eyewear - morpheus | rarity score = 30.67 | frequency = 326 / 10000
+background - matrix | rarity score = 30.67 | frequency = 326 / 10000
+background - this is fine | rarity score = 29.76 | frequency = 336 / 10000
+piercing - earring | rarity score = 28.49 | frequency = 351 / 10000
+hat - snapback | rarity score = 25.64 | frequency = 390 / 10000
+clothing - hacker | rarity score = 25.00 | frequency = 400 / 10000
+clothing - bomber | rarity score = 24.75 | frequency = 404 / 10000
+clothing - blue tracksuit | rarity score = 24.57 | frequency = 407 / 10000
+clothing - red tracksuit | rarity score = 24.10 | frequency = 415 / 10000
+clothing - blue tee | rarity score = 23.98 | frequency = 417 / 10000
+clothing - red tee | rarity score = 23.87 | frequency = 419 / 10000
+fur - cheshire | rarity score = 23.81 | frequency = 420 / 10000
+hat - durag | rarity score = 23.58 | frequency = 424 / 10000
+clothing - robe | rarity score = 23.58 | frequency = 424 / 10000
+hat - fitted cap | rarity score = 23.42 | frequency = 427 / 10000
+clothing - office shirt | rarity score = 23.26 | frequency = 430 / 10000
+clothing - space suit | rarity score = 23.20 | frequency = 431 / 10000
+hat - black beanie | rarity score = 23.15 | frequency = 432 / 10000
+hat - 420 bucket hat | rarity score = 23.04 | frequency = 434 / 10000
+clothing - hawaiian shirt | rarity score = 23.04 | frequency = 434 / 10000
+hat - safari | rarity score = 22.83 | frequency = 438 / 10000
+hat - keffiyeh | rarity score = 22.73 | frequency = 440 / 10000
+hat - red bucket hat | rarity score = 22.68 | frequency = 441 / 10000
+clothing - tie dye tee | rarity score = 22.52 | frequency = 444 / 10000
+clothing - black hoodie | rarity score = 22.37 | frequency = 447 / 10000
+hat - sports headband | rarity score = 22.32 | frequency = 448 / 10000
+hat - orange beanie | rarity score = 22.03 | frequency = 454 / 10000
+hat - golf | rarity score = 22.03 | frequency = 454 / 10000
+hat - fedora | rarity score = 21.93 | frequency = 456 / 10000
+hat - wizard hat | rarity score = 21.88 | frequency = 457 / 10000
+eyewear - red noggles | rarity score = 21.14 | frequency = 473 / 10000
+eyewear - blue noggles | rarity score = 21.10 | frequency = 474 / 10000
+clothing - fashion hoodie | rarity score = 20.88 | frequency = 479 / 10000
+hat - rainbow | rarity score = 20.70 | frequency = 483 / 10000
+eyewear - viper shades | rarity score = 18.35 | frequency = 545 / 10000
+eyewear - aviators | rarity score = 17.79 | frequency = 562 / 10000
+eyewear - nerd | rarity score = 17.73 | frequency = 564 / 10000
+eyewear - deal with it | rarity score = 17.45 | frequency = 573 / 10000
+hat - cowboy hat | rarity score = 17.42 | frequency = 574 / 10000
+mouth - mustache | rarity score = 17.06 | frequency = 586 / 10000
+eyewear - tired | rarity score = 16.53 | frequency = 605 / 10000
+mouth - yawn | rarity score = 11.19 | frequency = 894 / 10000
+mouth - vape | rarity score = 10.07 | frequency = 993 / 10000
+mouth - cig | rarity score = 9.03 | frequency = 1107 / 10000
+background - red | rarity score = 7.15 | frequency = 1398 / 10000
+mouth - bubble gum | rarity score = 7.10 | frequency = 1408 / 10000
+background - yellow | rarity score = 7.02 | frequency = 1424 / 10000
+background - green | rarity score = 6.96 | frequency = 1437 / 10000
+background - purple | rarity score = 6.90 | frequency = 1449 / 10000
+background - blue | rarity score = 6.78 | frequency = 1474 / 10000
+background - orange | rarity score = 6.61 | frequency = 1512 / 10000
+eye color - green | rarity score = 5.44 | frequency = 1837 / 10000
+eye color - yellow | rarity score = 5.30 | frequency = 1888 / 10000
+eye color - blue | rarity score = 5.20 | frequency = 1923 / 10000
+eye color - orange | rarity score = 5.13 | frequency = 1949 / 10000
+eye color - purple | rarity score = 5.10 | frequency = 1959 / 10000
+mouth - bored | rarity score = 4.63 | frequency = 2159 / 10000
+fur - orange tabby | rarity score = 4.38 | frequency = 2281 / 10000
+fur - cool blue | rarity score = 4.26 | frequency = 2347 / 10000
+fur - siamese | rarity score = 4.22 | frequency = 2372 / 10000
+fur - cream | rarity score = 4.22 | frequency = 2372 / 10000
+mouth - smile | rarity score = 3.82 | frequency = 2615 / 10000
